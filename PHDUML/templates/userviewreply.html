@@ -1,0 +1,27 @@
+{% extends "usertemp.html" %}
+{% block body %}
+<body>
+	<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No&nbsp;</td>
+      <td>Date&nbsp;</td>
+        <td>Subject&nbsp;</td>
+      <td>Complaint&nbsp;</td>
+      <td>Reply&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['c_date'] }}</td>
+        <td>{{ i['sub'] }}</td>
+      <td>{{ i['complaint'] }}</td>
+      <td>{{ i['reply'] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+</body>
+
+{% endblock %}

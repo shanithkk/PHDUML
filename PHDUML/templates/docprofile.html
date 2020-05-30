@@ -1,0 +1,74 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+<body>
+	<form action="/updatedocprofile" method="post" enctype="multipart/form-data">
+	<table width="400"  align="center" class="table table-striped" >
+  <tbody>
+	  <tr><td colspan="2" align="center"><img src="../static/doctor_pic/{{ a['dimg'] }}" height="90" width="90"/></td></tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ a['email'] }} </td>
+    </tr>
+    <tr>
+      <td>Name  </td>
+      <td><input type="text" name="n" class="form-control"  value={{ a['dname'] }} > </td>
+    </tr>
+          <tr>
+      <td>Image  </td>
+      <td><input type="file" name="img" class="form-control"   > </td>
+    </tr>
+    <tr>
+
+      <td>Contact </td>
+      <td><input type="text" name="p" class="form-control"value={{ a['dphone'] }}> </td>
+    </tr>
+    <tr>
+      <td>Place </td>
+      <td><input type="text" name="pl" class="form-control"value={{ a['dplace'] }}> </td>
+    </tr>
+    <tr>
+      <td>District </td>
+      <td><input type="text" name="dis" class="form-control"value={{ a['dist'] }}> </td>
+    </tr>
+
+    <tr>
+      <td>Specialization</td>
+     <td><input type="text" name="s" class="form-control"value={{ a['spec'] }}> </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" name="g" value="Male" {% if a['gender']=='Male' %} checked="checked"{% endif %}> Male<input type="radio" name="g" value="Female" {% if a['gender']=='Female' %} checked="checked"{% endif %}>Femle</td>
+    </tr>
+    <tr>
+      <td>DOB </td>
+      <td><input type="date" name="d" class="form-control" value={{ a['d_dob'] }}> </td>
+    </tr>
+    <tr>
+      <td>Hospital Name </td>
+      <td><input type="text" name="hn" class="form-control"value={{ a['h_name'] }}> </td>
+    </tr>
+    <tr>
+      <td>Place </td>
+      <td><input type="text" name="hp"class="form-control" value={{ a['h_place'] }} ></td>
+    </tr>
+    <tr>
+      <td>Post </td>
+      <td><input type="text" name="hpo"class="form-control" value={{ a['h_post'] }}> </td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><input type="text" name="hpi"class="form-control" value={{ a['h_pin'] }}> </td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><input type="text" name="q"class="form-control" value={{ a['qualification'] }}> </td>
+    </tr>
+
+	  <tr><td colspan="2" align="center"><input type="submit"name="b1" value="Update" class="btn btn-success"></td></tr>
+  </tbody>
+</table>
+
+	</form>
+</body>
+{% endblock %}

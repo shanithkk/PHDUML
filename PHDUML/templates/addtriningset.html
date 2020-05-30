@@ -1,0 +1,14 @@
+{% extends "temp.html" %}
+{% block body %}
+<body>
+	<form action="/addtrainigset_upload" method="post" enctype="multipart/form-data">
+	<table  align="center" class="table table-dark">
+		<tr><td colspan="2" align="center">Add Trainig Set</td>
+			
+		</tr>
+        <tr><td align="right" >Upload file</td> <td align="center"><input type="file"name="u" required class="btn btn-send"></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" name="s" value="Add" class="btn btn-success"></td></tr>
+		</table>
+	</form>
+</body>
+{% endblock %}

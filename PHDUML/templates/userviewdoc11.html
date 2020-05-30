@@ -1,0 +1,41 @@
+{% extends "usertemp.html" %}
+{% block body %}
+
+<body>
+		<form align="center" method="post" name="f">
+		<table width="800" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <th scope="col">Sl No&nbsp;</th>
+      <th scope="col">Name&nbsp;</th>
+      <th scope="col">Image&nbsp;</th>
+      <th scope="col">Hospital&nbsp;</th>
+      <th scope="col">Place&nbsp;</th>
+      <th scope="col">Spacialization&nbsp;</th>
+		<th scope="col">Rating&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+		<th scope="col">&nbsp;</th>
+    </tr>
+	{% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['dname'] }}</td>
+      <td>&nbsp;<img src="../static/doctor_pic/{{ i['dimg'] }}" height="90" width="90"/></td>
+		
+      <td>&nbsp;{{ i['h_name'] }}</td>
+      <td>&nbsp;{{ i['h_place'] }}</td>
+      <td>{{ i['spec'] }}</td>
+		<td>{{ i['rate'] }}</td>
+		<td><a href="/userviewschedule/{{ i['did'] }}" class="btn btn-success">Viewschedule </a></td>
+			<td><a href="" class="btn btn-send">Chat &nbsp;</a></td>
+	
+	  </tr>
+	{% endfor %}
+  </tbody>
+</table>
+
+			
+	</form>
+</body>
+
+{% endblock %}

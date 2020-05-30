@@ -1,0 +1,49 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+
+<body>
+    <form action="/confirmbook" method="post">
+    <table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+  <input type="hidden" name="hid" value={{ a['b_id'] }} </td>
+  <tr>
+      <td colspan="2" align="right"><input type="submit"name="chat" value="Chat"></td>
+    </tr>
+  <tr>
+      <td colspan="2" align="center"><img src="../static/userpic/{{ a['img'] }}" height="100" width="100"></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Name </td>
+      <td>{{ a['u_name'] }}</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>{{ a['age'] }}</td>
+    </tr>
+	  <tr>
+      <td>Phone Number</td>
+      <td>{{ a['ph_no'] }}</td>
+    </tr>
+	  <tr>
+      <td>Email</td>
+      <td>&nbsp;{{ a['email'] }}</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td>&nbsp;{{ a['u_place'] }}</td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td>&nbsp;{{ a['u_dist'] }}</td>
+    </tr>
+    
+     <tr>
+      <td colspan="2" align="center"><input type="submit" name="sts" value="Confirm" class="btn btn-success" onclick="return confirm('Are you sure')"> <input type="submit" name="sts" value="Reject" class="btn btn-success" onclick="return confirm('Are you sure')">  </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</body>
+{% endblock %}

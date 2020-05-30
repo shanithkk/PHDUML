@@ -1,0 +1,18 @@
+
+{% extends "usertemp.html" %}
+{% block body %}
+<body>
+	<form action="/userbooking" method="post" >
+	<table align="center" class="table table-striped">
+		<tr><td colspan="2" align="center"><h2>Booking</h2></td></tr>
+        <tr><td><input type="hidden" name="hid" value={{ a['op_id'] }} </td></tr>
+		<tr><td>Name </td><td>{{ a['dname'] }}</td></tr>
+        <tr><td> </td><td><img src="../static/doctor_pic/{{ a['dimg']}}" height="100" width="100"></td></tr>
+		<tr><td>Date </td><td>{{ a['date'] }}</td></tr>
+		<tr><td>Time </td><td>{{ a['f_time'] }} , {{ a['t_time'] }}</td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" name="book" value="Book" class="btn btn-send"></td></tr>
+		</table>
+	</form>
+</body>
+
+{% endblock %}

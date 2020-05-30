@@ -1,0 +1,41 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<body>
+<table width="400" border="0" align="center">
+  <tbody>
+    <tr>
+		<td align="center"><h2>Support Vector Machine</h2><br/><p>	Mastering machine learning algorithms isn’t a myth at all. Most of the beginners start by learning regression. It is simple to learn and use, but does that solve our purpose? Of course not! Because you can do so much more than just Regression!<br/>Think of machine learning algorithms as an armoury packed with axes, sword, blades, bow, dagger, etc. You have various tools, but you ought to learn to use them at the right time. As an analogy, think of ‘Regression’ as a sword capable of slicing and dicing data efficiently, but incapable of dealing with highly complex data. On the contrary, ‘Support Vector Machines’ is like a sharp knife – it works on smaller datasets, but on the complex ones, it can be much stronger and powerful in building machine learning models.</p></td>
+    </tr>
+    <tr>
+      <td>Accuracy of my prediction model is {{ a[0] }}%</td>
+
+    </tr>
+    <tr>
+      <td>True Positive(TP score):{{ a[1] }} </td>
+
+    </tr>
+    <tr>
+      <td>True Negative(TN score):{{ a[2] }} </td>
+
+    </tr>
+    <tr>
+      <td>False Positive(FP score): {{ a[3] }}</td>
+
+    </tr>
+    <tr>
+      <td>False Negative(FN score): {{ a[4] }}</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+</body>
+{% endblock %}

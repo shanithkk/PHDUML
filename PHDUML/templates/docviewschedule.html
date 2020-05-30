@@ -1,0 +1,31 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+
+<body>
+	<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No</td>
+      <td>Date</td>
+      <td>From Time</td>
+      <td>To Time</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['date'] }}</td>
+      <td>&nbsp;{{i['f_time'] }}</td>
+      <td>&nbsp;{{i['t_time'] }}</td>
+      <td><a href="/editopschedule/{{ i['op_id'] }}">Edit</a>&nbsp;</td>
+      <td><a href="/deleteschedule/{{ i['op_id'] }}">Delete</a>&nbsp;</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+</body>
+
+{% endblock %}

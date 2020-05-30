@@ -1,0 +1,26 @@
+{% extends "temp.html" %}
+{% block body %}
+<body>
+<table width="300" border="1" align="center" class="table table-dark">
+  <tbody>
+    <tr>
+        <td>Sl No</td>
+      <td>Doctor Name</td>
+        <td>Image</td>
+      <td>Hospital</td>
+      <td>Rating</td>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+        <td>{{ i['dname'] }}</td>
+        <td><img src="../static/doctor_pic/{{ i['dimg'] }}" height="90" width="90"></td>
+      <td>{{ i['h_place'] }}</td>
+      <td>{{ i['rate1'] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</body>
+
+{% endblock %}

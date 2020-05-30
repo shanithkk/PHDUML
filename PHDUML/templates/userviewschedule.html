@@ -1,0 +1,38 @@
+{% extends "usertemp.html" %}
+{% block body %}
+
+<body>
+<table align="center" class="table table-striped">
+    <tr><td colspan="2"><img src="../static/doctor_pic/{{ a['dimg'] }}" width="90" height="90" /></td></tr>
+
+        <tr><td>Name&nbsp;</td> <td>{{ a['dname'] }}</td></tr>
+        <tr><td>Hospital</td> <td>{{ a['h_name'] }}</td></tr>
+        <tr><td>Place</td><td>{{ a['h_place'] }}</td></tr>
+    </table>
+	<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl.No&nbsp;</td>
+
+      <td>Date&nbsp;</td>
+		<td>From Time&nbsp;</td>
+      <td>To Time&nbsp;</td>
+		<td></td>
+    </tr>
+
+    {% for i in data %}
+
+    <tr>
+      <td>{{ loop.index }}</td>
+
+        <td>{{ i['date'] }}</td>
+      &nbsp;<td>{{ i['f_time'] }}</td>
+        <td>{{ i['t_time'] }}</td>
+		<td><a href="/booking/{{ i['op_id'] }}" class="btn btn-send">Booking</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</body>
+
+{% endblock %}

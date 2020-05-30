@@ -1,0 +1,23 @@
+{% extends "temp.html" %}
+{% block body %}
+
+<body><table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No&nbsp;</td>
+      <td>Date&nbsp;</td>
+      <td>File name&nbsp;</td>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>{{ i['file'] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>
+{% endblock %}

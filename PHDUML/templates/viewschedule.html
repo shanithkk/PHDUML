@@ -1,0 +1,25 @@
+{% extends "temp.html" %}
+{% block body %}
+<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl.No&nbsp;</td>
+        <td>Doc name</td>
+      <td>Date&nbsp;</td>
+		<td>From Time&nbsp;</td>
+      <td>To Time&nbsp;</td>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+        <td>&nbsp;{{ i['dname'] }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+		<td>{{ i['f_time'] }}</td>
+      <td>&nbsp;{{ i['t_time']}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

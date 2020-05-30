@@ -1,0 +1,31 @@
+{% extends "usertemp.html" %}
+{% block body %}
+<body>
+	<table width="200" border="1" align="center" class="table table-stripped">
+  <tbody>
+    <tr>
+      <td>Sl No&nbsp;</td>
+        <td>Doctor Name&nbsp;</td>
+        <td>Hospital&nbsp;Name</td>
+        <td>Hospital place</td>
+      <td>Date&nbsp;</td>
+      <td>Time&nbsp;</td>
+      <td>status&nbsp;</td>
+
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['dname'] }}</td>
+        <td>{{ i['h_name'] }}</td>
+        <td>{{ i['h_place'] }}</td>
+        <td>{{ i['b_date'] }}</td>
+      <td>{{ i['f_time'] }},{{ i['t_time'] }} </td>
+      <td>&nbsp;{{ i['sts'] }}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</body>
+{% endblock %}

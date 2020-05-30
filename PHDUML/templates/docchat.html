@@ -1,0 +1,65 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/docchatpst">
+    <center><h4><i>CHAT WITH USER</i></h4></center><br>
+<script src="/static/jquerycht.js"></script>
+    <div class="col-md-12">
+<input type="hidden" id="hid" value="{{ a }}" name="toid">
+ <table width="600" align="center" class="table-bordered">
+    <tr>
+      <th width="92">Message</th>
+      <td width="459"><textarea name="c" class="form-control" id="textarea" cols="45" required></textarea></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><input type="submit" class="btn btn-success" name="SEnd" id="SEnd" value="SEND" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <br />
+
+
+
+  <table id="tbl_msg" width="600" align="center" class="table" border="0">
+
+  </table>
+</div>
+<script>
+    $(document).ready(function () {
+        var id,toid;
+        toid = document.getElementById("hid").value;
+        var ajax_call = function() {
+            $.ajax({
+                url: '/docchatchk',
+                type: 'post',
+                data: {idd:toid},
+                success: function (response) {
+                    console.log(response);
+                    {#                    alert(response)#}
+                    $("#tbl_msg").empty();
+                    var ln = response.length;
+                    for (i = 0; i < ln; i++) {
+                        var id = response[i]["t_id"];
+                        var date = response[i]["date"];
+                        var mes = response[i]["mes"];
+                        if (toid == id)    // outgoing message
+                        {
+                            $("#tbl_msg").append("<tr><td class='pull-left' style='width: 50%;'></td><td class='pull-right' style='width: 50%;background-color: #78CF8A;border-radius: 10px;'><div class='row'><div class='col-md-6'>ME</div><div class='col-md-6' align='right'>" + date + "</div><div class='col-md-12'><h4>" + mes + "</h4></div></div></td></tr>");
+                        }
+                        if (toid != id)    // incoming message
+                        {
+                            $("#tbl_msg").append("<tr><td class='pull-left' style='width: 50%;background-color: #c3e6cb;border-radius: 10px;'><div class='row'><div class='col-md-6'>USER</div><div class='col-md-6' align='right'>" + date + "</div><div class='col-md-12'><h4>" + mes + "</h4></div></div></td><td class='pull-right' style='width: 50%;'></td></tr>");
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                    {#                    alert("error   :   ", error)#}
+                }
+            });
+        };
+        var interval = 1000; // 1sec
+        setInterval(ajax_call, interval);
+    });
+</script>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "temp.html" %}
+{% block body %}
+	<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No&nbsp;</td>
+      <td>User Info </td>
+      <td>Date&nbsp;</td>
+        <td>Subject</td>
+      <td>Complaint&nbsp;</td>
+      <td>&nbsp;Reply </td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;<img src="../static/userpic/{{ i['img'] }}" width="80" height="80" > <br/>{{ i['u_name'] }}<br/>{{ i['ph_no'] }}<br/></td>
+      <td>&nbsp;{{ i['c_date'] }}</td>
+      <td>{{ i['sub'] }}</td>
+      <td>{{ i['complaint'] }}</td>
+      <td>{{ i['reply'] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

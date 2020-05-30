@@ -1,0 +1,47 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<body>
+<table width="400" border="0" align="center">
+  <tbody>
+    <tr>
+		<td align="center"><h2>Naive Bayers</h2><br/><p>	It is a classification technique based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.<br/>
+
+For example, a fruit may be considered to be an apple if it is red, round, and about 3 inches in diameter. Even if these features depend on each other or upon the existence of the other features, all of these properties independently contribute to the probability that this fruit is an apple and that is why it is known as ‘Naive’.<br/>
+
+Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.<br/>
+
+Bayes theorem provides a way of calculating posterior probability P(c|x) from P(c), P(x) and P(x|c).</p></td>
+    </tr>
+    <tr>
+      <td>Accuracy of my prediction model is {{ a[0] }}%</td>
+      
+    </tr>
+    <tr>
+      <td>True Positive(TP score):{{ a[1] }} </td>
+      
+    </tr>
+    <tr>
+      <td>True Negative(TN score):{{ a[2] }} </td>
+      
+    </tr>
+    <tr>
+      <td>False Positive(FP score): {{ a[3] }}</td>
+      
+    </tr>
+    <tr>
+      <td>False Negative(FN score): {{ a[4] }}</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+</body>
+{% endblock %}

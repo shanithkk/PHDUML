@@ -1,0 +1,43 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<body>
+<table width="400" border="0" align="center">
+  <tbody>
+    <tr>
+		<td align="center"><h2>Random Forest</h2><br/><p>	Random forest is a supervised learning algorithm which is used for both classification as well as regression. But however, it is mainly used for classification problems. As we know that a forest is made up of trees and more trees means more robust forest. Similarly, random forest algorithm creates decision trees on data samples and then gets the prediction from each of them and finally selects the best solution by means of voting. It is an ensemble method which is better than a single decision tree because it reduces the over-fitting by averaging the result.</p></td>
+    </tr>
+    <tr>
+      <tr>
+      <td>Accuracy of my prediction model is {{ a[0] }}%</td>
+
+    </tr>
+    <tr>
+      <td>True Positive(TP score):{{ a[1] }} </td>
+
+    </tr>
+    <tr>
+      <td>True Negative(TN score):{{ a[2] }} </td>
+
+    </tr>
+    <tr>
+      <td>False Positive(FP score): {{ a[3] }}</td>
+
+    </tr>
+    <tr>
+      <td>False Negative(FN score): {{ a[4] }}</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+{% endblock %}

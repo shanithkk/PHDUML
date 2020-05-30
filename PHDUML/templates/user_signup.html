@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Sign Up </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/usersignup/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/usersignup/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/static/usersignup/images/signup-img.jpg" alt="">
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="/user_signup" enctype="multipart/form-data">
+                        <h2>User Registration </h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name :</label>
+                                <input type="text" name="usname" id="usname" required pattern="[A-Z a-z.]{3,25}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="father_name">Image :</label>
+                                <input type="file" name="img" id="img" />
+                            </div>
+                        </div>
+{#                        <div class="form-group">#}
+{#                            <label for="address">Address :</label>#}
+{#                            <input type="text" name="address" id="address" required/>#}
+{#                        </div>#}
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Gender :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="r" id="Male" value="Male" checked>
+                                <label for="male">Male</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="r" id="Female" value="Female">
+                                <label for="female">Female</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">District :</label>
+                                <div class="form-select">
+                                    <select name="udist" id="udist" required>
+                                        <option value=""></option>
+                                        <option value="Kasargode">Kasargode</option>
+                                        <option value="Kannur">Kannur</option>
+                                        <option value="Wayanad">Wayanad</option>
+                                        <option value="Kozhikkode">Kozhikkode</option>
+                                        <option value="Malappuram">Malappuram</option>
+                                        <option value="Palakkad">Palakkad</option>
+                                        <option value="Thrissur">Thrissur</option>
+                                        <option value="Ernakulam">Ernakulam</option>
+                                        <option value="Alappuzha">Alappuzha</option>
+                                        <option value="Pathanamthitta">Pathanamthitta</option>
+                                        <option value="Idukki">Idukki</option>
+                                        <option value="Kottayam">Kottayam</option>
+                                        <option value="Kollam">Kollam</option>
+                                        <option value="Trivandrum">Trivandrum</option>
+                                    </select>
+                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="address">City :</label>
+                                <input type="text" name="uplace" id="uplace" required pattern="[A-Z a-z.]{3,25}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="birth_date">Age :</label>
+                            <input type="text" name="dob" id="dob" required pattern="{0-9}">
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Phone Number :</label>
+                            <input type="text" name="phone" id="phone" required pattern="{0-9}">
+                        </div>
+{#                        <div class="form-group">#}
+{#                            <label for="course">Course :</label>#}
+{#                            <div class="form-select">#}
+{#                                <select name="course" id="course">#}
+{#                                    <option value=""></option>#}
+{#                                    <option value="computer">Computer Operator & Pragramming Assistant</option>#}
+{#                                    <option value="desiger">Designer</option>#}
+{#                                    <option value="marketing">Marketing</option>#}
+{#                                </select>#}
+{#                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-group">
+                            <label for="email">Email ID :</label>
+                            <input type="email" name="uname" id="uname" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Password :</label>
+                            <input type="password" name="pass" id="pass" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Confirm Password :</label>
+                            <input type="password" name="cpass" id="cpass" required/>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Submit" class="submit" name="b1" id="b1" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/usersignup/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/usersignup/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

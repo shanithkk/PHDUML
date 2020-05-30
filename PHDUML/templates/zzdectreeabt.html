@@ -1,0 +1,40 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<body>
+<table width="800" border="0" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+		<td ><h2 align="center" >Decision Tree</h2><br/><p align="justify">	  Decision Tree Analysis is a general, predictive modelling tool that has applications spanning a number of different areas. In general, decision trees are constructed via an algorithmic approach that identifies ways to split a data set based on different conditions. It is one of the most widely used and practical methods for supervised learning. Decision Trees are a non-parametric supervised learning method used for both classification and regression tasks. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.</p></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td>Accuracy of my prediction model is {{ a[0] }}%</td>
+      
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td>True Positive(TP score):  {{ a[1] }} </td>
+      
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td>True Negative(TN score):  {{ a[2] }} </td>
+      
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td>False Positive(FP score): {{ a[3] }}</td>
+      
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+      <td>False Negative(FN score): {{ a[4] }}</td>
+      
+
+      
+    </tr>
+  </tbody>
+</table>
+
+</body>
+{% endblock %}

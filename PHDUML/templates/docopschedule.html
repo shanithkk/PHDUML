@@ -1,0 +1,28 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+<body>
+<form action="/addopschedule" method="post">
+	<table width="400"  align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Date&nbsp;</td>
+      <td><input type="date" name="date" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td>From Time&nbsp;</td>
+      <td><input type="time" name="ftime" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td>To Time&nbsp;</td>
+      <td><input type="time" name="ttime" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit"name="save" value="Save" class="btn btn-send"></td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</body>
+
+{% endblock %}

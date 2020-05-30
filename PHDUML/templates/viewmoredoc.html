@@ -1,0 +1,61 @@
+{% extends "temp.html" %}
+{% block body %}
+<body>
+	<form action="/approval_doc" method="post">
+	<table width="300"  align="center" class="table table-striped">
+  <tbody>
+  <input type="hidden" name="id" value={{ a['lid'] }}>
+                <tr><td colspan="2" align="center"><img src="../static/doctor_pic/{{ a['dimg'] }}" width="100" height="100"/></td></tr>
+    <tr>
+      <td>Name :&nbsp;</td>
+      <td> {{ a['dname'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Contact :&nbsp;</td>
+      <td> {{ a['dphone'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Email:&nbsp;</td>
+      <td> {{ a['email'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Specialization:&nbsp;</td>
+      <td> {{ a['spec'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Gender&nbsp;</td>
+      <td> {{ a['gender'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>DOB :&nbsp;</td>
+      <td> {{ a['d_dob'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Hospital Name :&nbsp;</td>
+      <td> {{ a['h_name'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Place :&nbsp;</td>
+      <td> {{ a['h_place'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Post :&nbsp;</td>
+      <td> {{ a['h_post'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Pin:&nbsp;</td>
+      <td> {{ a['h_pin'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Qualification: &nbsp;</td>
+      <td> {{ a['qualification'] }}&nbsp;</td>
+    </tr>
+
+	  <tr><td><input type="submit"name="b1" value="Approve" class="btn btn-facebook"></td>
+          <td><input type="submit"name="b1"value="Reject" class="btn btn-facebook"></td></tr>
+  </tbody>
+</table>
+
+	</form>
+</body>
+{% endblock %}

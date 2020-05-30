@@ -1,0 +1,30 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+<table width="400" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No&nbsp;</td>
+      <td>Name&nbsp;</td>
+        <td>Photo</td>
+      <td>Address&nbsp;</td>
+      <td>Date&nbsp;</td>
+        <td>Time</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in a %}
+    <tr>
+        <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['u_name'] }}</td>
+      <td>&nbsp;<img src="../static/userpic/{{ i['img'] }}" height="90" width="90"/></td>
+      <td>{{ i['u_place'] }},{{i['u_dist']  }}</td>
+      <td>&nbsp;{{ i['b_date'] }}</td>
+        <td>{{ i['f_time'] }},{{ i['t_time'] }}</td>
+      <td><a href="/docviewmorebooking/{{ i['b_id'] }}" class="btn btn-dark">Viewmore</a> </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</form>
+{% endblock %}
+

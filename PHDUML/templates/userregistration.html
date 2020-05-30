@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>User Registrationt</title>
+</head>
+
+<body>
+	<form action="/user_signup" method="post" enctype="multipart/form-data">
+        <h2 align="center">User Registration</h2>
+	<table width="400"  align="center">
+  <tbody>
+
+    <tr>
+      <td>Name</td>
+      <td><input type="text" name="usname"></td>
+    </tr>
+	 <tr>
+      <td>Age</td>
+      <td><input type="text" name="dob"></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" name="r" value="Male">Male <input type="radio"name="r" value="Female">Female</td>
+    </tr>
+
+
+
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="uplace"></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><input type="text" name="udist"></td>
+    </tr>
+     <tr>
+      <td>Image</td>
+      <td><input type="file" name="img"></td>
+    </tr>
+     <tr>
+      <td>Phone Number</td>
+      <td><input type="number" name="phone"></td>
+    </tr>
+      <tr>
+      <td>Email (username)</td>
+      <td><input type="text" name="uname"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="pass"></td>
+    </tr>
+    <tr>
+      <td>Confirm Password</td>
+      <td><input type="password" name="cpass"></td>
+    </tr>
+    <tr>
+      <td align="center"><input type="submit" name="b1" value="SignUp"></td>
+		<td><input type="reset" name="reset" value="Reset"></td>
+    </tr>
+  </tbody>
+</table>
+	</form>
+</body>
+</html>

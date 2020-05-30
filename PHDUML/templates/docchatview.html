@@ -1,0 +1,28 @@
+{% extends "doctemp.html" %}
+{% block body %}
+<body>
+<table width="400" border="1" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Sl No</td>
+      <td>Name</td>
+      <td>Image</td>
+      <td>Contact No</td>
+      <td>Place</td>
+      <td>Chat</td>
+      <td></td>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['u_name'] }}</td>
+      <td><img src="../static/userpic/{{ i['img'] }}" height="90" width="90"/></td>
+      <td>{{ i['ph_no'] }}</td>
+      <td>{{ i['u_place'] }}</td>
+      <td>{{ i['mes'] }}</td>
+      <td><a href="/chatdoc/{{ i['lid'] }}" class="btn btn-send">Chat</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

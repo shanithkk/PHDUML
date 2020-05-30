@@ -1,0 +1,75 @@
+{% extends "doctemp.html" %}
+{% block body %}
+
+<body>
+	<form action="/tensflpst" method="POST">
+	<h3 align="center">Tensor-Flow</h3>
+	  <table width="400"  align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Age&nbsp;</td>
+      <td><input type="text" name="f1"></td>
+    </tr>
+    <tr>
+        <td>Sex&nbsp;</td>
+      <td><select name="f2">
+          <option></option>
+          <option value="1">Male</option>
+          <option value="0">Female</option></td>
+    </tr>
+    <tr>
+      <td>Chest Pain&nbsp;</td>
+      <td><input type="text" name="f3"></td>
+    </tr>
+    <tr>
+        <td>Trestbp&nbsp;</td>
+      <td><input type="text" name="f4"></td>
+    </tr>
+    <tr>
+        <td>Cholestrol&nbsp;</td>
+      <td><input type="text" name="f5"></td>
+    </tr>
+    <tr>
+        <td>Fbs&nbsp;</td>
+      <td><input type="text" name="f6"></td>
+    </tr>
+    <tr>
+        <td>Rest Cg&nbsp;</td>
+      <td><input type="text" name="f7"></td>
+    </tr>
+    <tr>
+            <td>Thalach&nbsp;</td>
+      <td><input type="text" name="f8"></td>
+    </tr>
+    <tr>
+        <td>Exang&nbsp;</td>
+      <td><input type="text" name="f9"></td>
+    </tr>
+    <tr>
+        <td>old peak&nbsp;</td>
+      <td><input type="text" name="f10"></td>
+    </tr>
+    <tr>
+        <td>slope&nbsp;</td>
+      <td><input type="text" name="f11"></td>
+    </tr>
+    <tr>
+        <td>CA&nbsp;</td>
+      <td><input type="text" name="f12"></td>
+    </tr>
+    <tr>
+        <td>Thal&nbsp;</td>
+      <td><input type="text" name="f13"></td>
+    </tr>
+    <tr><td></td></tr>
+	   <tr>
+        <td><input type="submit" name="check" value="Result" class="btn btn-success"></td>
+      <td><input type="text" name="f14" value={{ a }}></td>
+    </tr>
+  </tbody>
+</table>
+
+	</form>
+</body>
+
+{% endblock %}

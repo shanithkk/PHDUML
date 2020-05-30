@@ -1,0 +1,69 @@
+{% extends "usertemp.html" %}
+{% block body %}
+
+<script src="/static/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</head>
+<body>
+<style>
+input[type=text], select {
+  width: 30%;
+  padding: 7px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #988686;
+  border-radius: 3px;
+  box-sizing: border-box;
+    float:right;
+    background-color: #eaeaea;
+}
+</style>
+
+<input id="myInput" type="text" placeholder="Search Here..." class="form-control-sm" >
+<br><br>
+
+<table>
+
+    <table width="800" border="1" align="center" class="table table-striped">
+  <tbody id="myTable">
+    <tr>
+      <th scope="col">Sl No&nbsp;</th>
+      <th scope="col">Name&nbsp;</th>
+      <th scope="col">Image&nbsp;</th>
+      <th scope="col">Hospital&nbsp;</th>
+      <th scope="col">Place&nbsp;</th>
+      <th scope="col">Spacialization&nbsp;</th>
+{#		<th scope="col">Rating&nbsp;</th>#}
+      <th scope="col">&nbsp;</th>
+		<th scope="col">&nbsp;</th>
+    </tr>
+	{% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['dname'] }}</td>
+      <td>&nbsp;<img src="../static/doctor_pic/{{ i['dimg'] }}" height="90" width="90"/></td>
+
+      <td>&nbsp;{{ i['h_name'] }}</td>
+      <td>&nbsp;{{ i['h_place'] }}</td>
+      <td>{{ i['spec'] }}</td>
+{#		<td>{{ i['rate'] }}</td>#}
+		<td><a href="/userviewschedule/{{ i['did'] }}" class="btn btn-success">Viewschedule </a></td>
+			<td><a href="/chat/{{ i['lid'] }}" class="btn btn-send">Chat </a></td>
+
+	  </tr>
+	{% endfor %}
+  </tbody>
+</table>
+
+</body>
+{% endblock %}

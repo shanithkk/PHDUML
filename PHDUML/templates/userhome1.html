@@ -1,0 +1,54 @@
+{% extends "usertemp.html" %}
+{% block body %}
+
+<body>
+	<form action="/updateuser" method="post">
+        
+	<table width="200"  align="center" class=" table table-active">
+  <tbody>
+
+  <tr>
+      <td></td>
+      <td><img src="../static/userpic/{{ a['img'] }}" height="90" width="90"></td>
+    </tr>
+  <tr>
+      <td>Name</td>
+      <td><input type="text"  class="form-control" name="usname" value={{ a['u_name'] }}></td>
+    </tr>
+	 <tr>
+      <td>Age</td>
+      <td><input type="text" class="form-control" name="dob" value={{ a['age'] }}></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio"  name="r" {% if a['gender']=='Male' %} checked="checked" {% endif %}value="Male">Male <input type="radio"name="r" {% if a['gender']=='Female' %} checked="checked" {% endif %}value="Female">Female</td>
+    </tr>
+
+
+
+    <tr>
+      <td>Place</td>
+      <td><input type="text" class="form-control" name="uplace"value={{ a['u_place'] }}></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><input type="text" class="form-control" name="udist"value={{ a['u_dist'] }}></td>
+    </tr>
+
+     <tr>
+      <td>Phone Number</td>
+      <td><input type="number" class="form-control" name="phone" value={{ a['ph_no'] }}></td>
+    </tr>
+      <tr>
+      <td>Email (username)</td>
+      <td>{{ a['email'] }}</td>
+    </tr>
+        <td align="center" colspan="2"><input type="submit" name="b1" value="update" class="btn btn-send"></td>
+		
+    </tr>
+  </tbody>
+</table>
+	</form>
+</body>
+
+{% endblock %}

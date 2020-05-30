@@ -1,0 +1,101 @@
+{#<!doctype html>#}
+{#<html>#}
+{#<head>#}
+{#<meta charset="utf-8">#}
+{#<title>Doctor Registration</title>#}
+{#</head>#}
+{% extends "doc_signup.html" %}
+{% block body %}
+<body>
+<form action="/doctor_signup" method="post" enctype="multipart/form-data">
+<table width="400" align="left" class="table table-stripped" border="0">
+  <tbody>
+  <tr><td colspan="2" align="center"><h2>Doctor Registration</h2></td></tr>
+
+	  <tr>
+      <td>Name</td>
+      <td><input type="text"name="dname" class="form-control" required required pattern="[A-Z a-z.]{3,25}"></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" name="r" value="Male" checked>Male
+	  <input type="radio" name="r" value="Female">Female</td>
+    </tr>
+    <tr>
+      <td>DOB&nbsp;</td>
+      <td><input type="date"name="dob" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <tr>
+      <td>Specialization&nbsp;</td>
+      <td><input type="text"name="spec" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Place&nbsp;</td>
+      <td><input type="text"name="dplace" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>District&nbsp;</td>
+      <td><input type="text"name="ddist" class="form-control" required>&nbsp;</td>
+    </tr>
+          <tr>
+      <td>Image &nbsp;</td>
+      <td><input  type="file" name="dimg" class="form-control" ></td>
+    </tr>
+
+
+      <td>Phone Number&nbsp;</td>
+      <td><input  type="number"name="phone" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+<tr>
+          <td colspan="2"><h5>Hospital Details&nbsp;&nbsp;</h5></td>
+    </tr>
+    <tr>
+        <td>Hospital Name&nbsp;</td>
+      <td><input type="text"name="hname" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Hospital Place&nbsp;</td>
+      <td><input type="text"name="hplace" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Hospital Post&nbsp;</td>
+      <td><input type="text"name="hpost" class="form-control" required>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>Hospital Pin&nbsp;</td>
+      <td><input type="text"name="hpin" class="form-control" required pattern="{0-9}">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Experience&nbsp;</td>
+      <td><input type="text"name="exp" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Qualification&nbsp;</td>
+      <td><input type="checkbox" name="c" value="mbbs" >MBBS<input type="checkbox" name="c" value="md">MD<input type="checkbox" name="c" value="other">Other</td>
+		<br/><input type="text" style="visibility: hidden" name="other" >    </tr>
+       <tr>
+           <td colspan="2"><h5>&nbsp;Username and Password</h5></td>
+    </tr>
+      <tr>
+      <td>Email(username)</td>
+      <td><input type="text"name="uname" class="form-control" required>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Password &nbsp;</td>
+      <td><input type="password"name="pass" class="form-control" required>&nbsp;</td>
+    </tr>
+       <tr>
+      <td>Confirm Password &nbsp;</td>
+      <td><input type="password"name="cpass" class="form-control" required>&nbsp;</td>
+    </tr>
+	  <tr><td colspan="2" align="center"><input class="btn btn-success" type="submit"name="signup"value="SignUp"></td></tr>
+  </tbody>
+</table>
+</form>
+</body>
+
+{% endblock %}
+{#</html>#}

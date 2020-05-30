@@ -1,0 +1,36 @@
+{% extends "temp.html" %}
+{% block body %}
+
+<body>
+	<form align="center" method="post" name="f">
+		<table width="800" border="1" align="center" class="table table-striped">
+  <tbody>
+    <tr>
+      <th scope="col">Sl No&nbsp;</th>
+      <th scope="col">Name&nbsp;</th>
+      <th scope="col">Image&nbsp;</th>
+      <th scope="col">Contact&nbsp;</th>
+      <th scope="col">Email&nbsp;</th>
+      <th scope="col">Spacialization&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in a %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['dname'] }}</td>
+      <td>&nbsp;<img src="../static/doctor_pic/{{ i['dimg'] }}" height="80" width="80"> </td>
+		
+      <td>{{ i['dphone'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>&nbsp;{{ i['spec'] }}</td>
+		<td><a href="/viewmoredoc/{{ i['lid'] }}" class="btn btn-facebook">Viewmore &nbsp;</a></td>
+	  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+			
+    </form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "temp.html" %}
+{% block body %}
+<body>
+	<form  action="/adminreply_post" method="post">
+	<table  align="center" class="table table-striped">
+        <tr><td>Complaint</td><td>{{ a['complaint'] }}</td></tr>
+		<tr><td>Reply</td><td><textarea name="b1" required></textarea></td></tr>
+		<tr><td colspan="2"align="center"><input type="submit"name="s1"value="Send" class="btn btn-send"></td></tr>
+		</table></form>
+</body>
+{% endblock %}
